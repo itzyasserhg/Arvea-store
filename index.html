@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>متجر Arvia — منتجات الأصلية</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">متجر <span>Arvia</span></h1>
+      <div class="search-cart">
+        <input id="search" type="search" placeholder="ابحث عن منتج، مثال: عطر، كريم..." />
+        <button id="cart-toggle" class="cart-btn">🛒 <span id="cart-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <select id="category-filter">
+        <option value="all">كل الفئات</option>
+        <option value="عطور">عطور</option>
+        <option value="عناية بالوجه">عناية بالوجه</option>
+        <option value="عناية بالجسم">عناية بالجسم</option>
+        <option value="مكياج">مكياج</option>
+      </select>
+
+      <div class="sort">
+        <label for="sort-select">ترتيب:</label>
+        <select id="sort-select">
+          <option value="default">الأحدث</option>
+          <option value="price-asc">الأرخص أولًا</option>
+          <option value="price-desc">الأغلى أولًا</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="products" class="products-grid"></section>
+  </main>
+
+  <aside id="cart" class="cart hidden">
+    <h2>سلة التسوق</h2>
+    <div id="cart-items"></div>
+    <div class="cart-summary">
+      <div>المجموع: <strong id="cart-total">0 د.ج</strong></div>
+      <button id="checkout-btn" class="primary">إتمام الطلب</button>
+      <button id="clear-cart" class="muted">تفريغ السلة</button>
+    </div>
+  </aside>
+
+  <div id="product-modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-body">
+      <button id="modal-close" class="close">✖</button>
+      <div class="modal-content">
+        <img id="modal-image" src="" alt="">
+        <div class="modal-info">
+          <h3 id="modal-title"></h3>
+          <p id="modal-desc"></p>
+          <div class="price" id="modal-price"></div>
+          <div class="modal-actions">
+            <label>الكمية: <input id="modal-qty" type="number" value="1" min="1"></label>
+            <button id="add-to-cart" class="primary">أضف للسلة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>حقوق النشر © <span id="year"></span> متجر Arvia — جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
